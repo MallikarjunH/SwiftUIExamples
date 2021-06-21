@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                Image("dealImg")
+                Image("dealbutton")
                 
                 Spacer()
                 HStack{
