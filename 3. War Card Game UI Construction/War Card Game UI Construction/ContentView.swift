@@ -31,8 +31,20 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                Image("dealbutton")
+                //old code with simple image
+              //  Image("dealbutton")
                 
+                //new code with button
+                Button(action: {
+                    print("Clicked on Play")
+                }, label: {
+                    Image("dealbutton")
+                })
+                //or button
+              /*  Button("Click"){
+                    print("Test")
+                }
+                */
                 Spacer()
                 HStack{
                     Spacer()
