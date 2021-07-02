@@ -20,10 +20,18 @@ struct ContentView: View {
             Button(action: {
                 print("Clicked on Custom Button")
             }, label: {
-                //Text("Custome Button");
-                Image("lemon")
+                //Text("Custome Button")
+                
+                //Image("lemon") //OR
+                
+                VStack{ //or
+                    Image("lemon")
+                    Text("Custome Button")
+                }
+               
             })
             Spacer()
+           
         }
         
         /*
