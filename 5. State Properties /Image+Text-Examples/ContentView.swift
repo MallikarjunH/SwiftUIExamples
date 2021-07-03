@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
     
         //MARK: Example 1 - state Property
-        VStack {
+       VStack {
             Image("Eiffel-Tower-Paris")
                 .resizable()
                 //  .ignoresSafeArea(.all)
@@ -51,8 +51,55 @@ struct ContentView: View {
         }
         
         //MARK: Example 2 - Challenge
-        
-        
+       
+        /*
+        VStack {
+            Image("Eiffel-Tower-Paris")
+                .resizable()
+                //  .ignoresSafeArea(.all)
+                .cornerRadius(25)
+                .padding()
+                .shadow(radius: 10 )
+            
+            HStack{
+                Button(action: {
+                    self.isHeartSelected.toggle()
+                    if isHeartSelected {
+                        heartCount = heartCount + 1
+                    }else{
+                        heartCount = heartCount - 1
+                    }
+                }, label: {
+                    //by default filled/foreground color is blue - if u wants to customize then u can do the by changing foregroundcolor
+                    if isHeartSelected {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.red)
+                    }else{
+                        Image(systemName: "heart")
+                    }
+                    
+                })
+               
+                Text("\(heartCount)") // or - Text(String(heartCount))
+            }
+            
+            if isHeartSelected {
+                Text("Eiffel Tower Paris")
+                    .fontWeight(.bold)
+                    .font(.title2)
+                    .foregroundColor(.purple)
+                    .padding()
+            }else{
+                Text("Eiffel Tower Paris")
+                    .fontWeight(.light)
+                    .font(.callout)
+                    .foregroundColor(.black)
+                    .italic()
+                    .padding()
+            }
+            
+        }
+        */
     }
 }
 
