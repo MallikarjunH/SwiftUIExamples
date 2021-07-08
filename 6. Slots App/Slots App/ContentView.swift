@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
+    private var symbols = ["apple", "cherry", "star"]
+    @State private var numbers = [0, 1, 2]
+    
     @State private var creditValue = 1000
+    private var betValue = 100
     
     var body: some View {
         
@@ -50,17 +54,17 @@ struct ContentView: View {
                 
                 HStack{
                     Spacer()
-                    Image("apple").resizable().aspectRatio(1,contentMode: .fit)
+                    Image(self.symbols[self.numbers[0]]).resizable().aspectRatio(1,contentMode: .fit)
                         .padding(.all)
                         .background(Color.white.opacity(0.5))
                         .cornerRadius(20)
                     
-                    Image("apple").resizable().aspectRatio(1,contentMode: .fit)
+                    Image(self.symbols[self.numbers[1]]).resizable().aspectRatio(1,contentMode: .fit)
                         .padding(.all)
                         .background(Color.white.opacity(0.5))
                         .cornerRadius(20)
                     
-                    Image("apple").resizable().aspectRatio(1,contentMode: .fit)
+                    Image(self.symbols[self.numbers[2]]).resizable().aspectRatio(1,contentMode: .fit)
                         .padding(.all)
                         .background(Color.white.opacity(0.5))
                         .cornerRadius(15)
@@ -71,7 +75,21 @@ struct ContentView: View {
                 
                 Button(action: {
                     print("Button Clicked")
-                    self.creditValue = self.creditValue + 1
+                   // self.creditValue = self.creditValue + 1
+                    self.numbers[0] = Int.random(in: 0...self.numbers.count - 1)
+                    
+                    self.numbers[1] = Int.random(in: 0...self.numbers.count - 1)
+                    
+                    self.numbers[2] = Int.random(in: 0...self.numbers.count - 1)
+                    
+                    if self.numbers[0] == self.numbers[1] && self.numbers[1] == self.numbers[2] {
+                        
+                       // self.creditValue = self.creditValue * self.betValue
+                        self.creditValue = self.creditValue + 200
+                    }else{
+                        self.creditValue = self.creditValue - self.betValue
+                    }
+                    
                 }, label: {
                     Text("Spin").foregroundColor(.white)
                         .bold()
