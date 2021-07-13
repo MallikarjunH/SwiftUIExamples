@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var numbers = [0, 1, 2]
     
     @State private var creditValue = 1000
-    private var betValue = 100
+    private var betValue = 50
     
     var body: some View {
         
