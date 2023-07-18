@@ -12,6 +12,9 @@ struct ContentView: View {
         
         VStack {
             //Sigle Line - Text
+            Text("Simple Text (Label)")
+            
+            //Sigle Line - Text
             Text("Stay Hungry. Stay Foolish.")
             //.font(.title2)
             // .font(.system(size: 25))
