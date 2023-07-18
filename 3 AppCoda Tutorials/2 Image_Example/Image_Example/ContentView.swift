@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         
         VStack {
@@ -70,7 +71,7 @@ struct ContentView: View {
             
             //Note: by default aspect ratio will be .fill to screen
             
-            
+            /*
             //4 - Applying an Overlay to an Image: When designing your app, you may need to layer another image or text on top of an image view. The SwiftUI framework provides a modifier named overlay for developers to apply an overlay to an image.
             Image("sample_tower")
                 .resizable()
@@ -89,7 +90,65 @@ struct ContentView: View {
                         
                     }
                 )
+              */
             
+            
+            /*
+            //4.1 - small excercise
+            Image("sample_tower")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .overlay(
+                        /*
+                        //option 1
+                        Text("If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life it stays with you, for Paris is a moveab le feast.\n\n- Ernest Hemingway")
+                            .padding().font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                            .background(Color.black.opacity(0.7))
+                            .cornerRadius(10)
+                            .padding(),
+                            //.padding([.top, .leading, .trailing]),
+                        alignment: .top
+                        */
+                    
+                    //option 2
+                    VStack {
+                        Text("If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life it stays with you, for Paris is a moveab le feast.\n\n- Ernest Hemingway")
+                            .padding()
+                            .fontWeight(.heavy)
+                            .font(.system(.headline, design: .rounded))
+                            .foregroundColor(.white)
+                            .background(Color.black.opacity(0.7))
+                            .cornerRadius(10)
+                            .padding([.top, .leading, .trailing])
+                            //or .padding([.top, .leading, .trailing],20) //here you can give exact value that u want to keep padding
+                        
+                        Spacer()
+                    }
+                
+                )
+            
+            */
+            
+            //5 - Darken an Image Using Overlay
+            
+            Image("sample_tower")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .overlay(
+            
+                    Color.black
+                        .opacity(0.3)
+                        .overlay( //overlay inside overlay again
+                            
+                            Text("Paris")
+                                .foregroundColor(.white)
+                                .font(.system(size: 40))
+                                .fontWeight(.heavy)
+                        )
+                )
+            
+            //Note: the overlay modifier is not limited to Image . You can apply it to any other view. 
 
         }
         
