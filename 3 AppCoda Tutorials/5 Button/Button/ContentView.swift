@@ -182,7 +182,6 @@ struct ContentView: View {
                 } label: {
                     
                     HStack {
-                        
                         Image(systemName: "trash")
                             .font(.title)
                         Text("Delete")
@@ -206,7 +205,9 @@ struct ContentView: View {
 
 struct GradientBackgroundStyle: ButtonStyle {
     
-    func makeBody(configuration: Self.Configuration) -> some View { configuration.label
+    func makeBody(configuration: Self.Configuration) -> some View {
+        
+        configuration.label
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
             .foregroundColor(.white)
